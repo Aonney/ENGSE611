@@ -1,30 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เว็ปไซต์ของฉัน</title>
+    <title>เว็บไซต์ของฉัน</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .center {
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
-    <center>
+
+<!-- ส่วนแนะนำตัว -->
+<header class="center">
     <h1>แนะนำตัวเอง</h1>
     <p>นาย สันติ ปัญญาหน้อย</p>
     <p>รหัสนักศึกษา 68543210077-2</p>
-    </center>
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-    </ul>
-    <ol>
-        <li>เตรียมไฟล์ HTML</li>
-        <li>เขียนโค้ดพื้นฐาน</li>
-        <li>แสดงผลในเบราว์เซอร์</li>
-    </ol>
-    <dl>
-        <dt>HTML</dt>
-        <dd>ภาษาสำหรับสร้่งโครงสร้างเว็บเพจ</dd>
 
+<<<<<<< Updated upstream
+    <h1>My Portfolio</h1>
+    <p>ตัวอย่างเว็บไซต์โดยใช้ Semantic HTML</p>
+</header>
+
+<!-- รายการทักษะ -->
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+
+<!-- ขั้นตอนการทำงาน -->
+<ol>
+    <li>เตรียมไฟล์ HTML</li>
+    <li>เขียนโค้ดพื้นฐาน</li>
+    <li>แสดงผลในเบราว์เซอร์</li>
+</ol>
+
+<!-- ความรู้ HTML / CSS -->
+<dl>
+    <dt>HTML</dt>
+    <dd>ภาษาสำหรับสร้างโครงสร้างเว็บเพจ</dd>
+
+    <dt>CSS</dt>
+    <dd>ภาษาสำหรับตกแต่งรูปแบบของเว็บเพจ</dd>
+</dl>
+<!-- เมนูนำทาง -->
+<nav>
+    <ul>
+        <li><a href="#home">หน้าแรก</a></li>
+        <li><a href="#articles">บทความ</a></li>
+        <li><a href="#contact">ติดต่อ</a></li>
+    </ul>
+</nav>
+<!-- ลิงก์ต่าง ๆ -->
+<div class="center">
+    <p><a href="URL">ข้อความ</a></p>
+    <p><a href="https://www.google.com">ไป Google</a></p>
+    <p><a href="test.html">ไป test.html</a></p>
+
+    <h2 id="contact">เมนูติดต่อ</h2>
+    <p><a href="#contact">ส่วนติดต่อ</a></p>
+
+    <p><a href="https://example.com" target="_blank">เปิดหน้าแท็บใหม่</a></p>
+    <p><a href="mailto:info@example.com">ส่งเมล</a></p>
+    <p><a href="tel:0812345678">โทร</a></p>
+</div>
+
+<!-- ภาพตัวอย่าง -->
+<p align="center">
+    ลิงก์ภายใน <br>
+    <img 
+        src="rmutl_logo.jpg" 
+        alt="RMUTL Logo" 
+        width="200" 
+        height="200"
+    >
+</p>
+
+<p align="center">
+    ลิงก์ภายนอก <br>
+    <img 
+        src="https://e-cms.rmutl.ac.th/assets/upload/files/2024/05/20240523133414_79844.jpg"
+        alt="RMUTL Logo"
+    >
+</p>
+
+<p align="center">
+    ความสำคัญของ Alt <br>
+    <img 
+        src="https://e-cms.rmutl.ac.th/assets/upload/files/2024/05/20240523133414_79844.jpg"
+        alt="RMUTL Logo"
+    >
+</p>
+
+<!-- เนื้อหาหลัก -->
+<main>
+
+    <section id="home">
+        <h2>ยินดีต้อนรับ</h2>
+        <p>นี่คือตัวอย่างโครงสร้างเว็บด้วย Semantic HTML5</p>
+    </section>
+
+    <section id="articles">
+        <h2>บทความล่าสุด</h2>
+
+        <article>
+            <h3>บทความที่ 1</h3>
+            <p>นี่คือเนื้อหาบทความแรก...</p>
+        </article>
+
+        <article>
+            <h3>บทความที่ 2</h3>
+            <p>นี่คือเนื้อหาบทความที่สอง...</p>
+        </article>
+    </section>
+
+    <aside>
+        <h3>ข้อมูลเพิ่มเติม</h3>
+        <p>ลิงก์ที่เกี่ยวข้องหรือโฆษณา</p>
+    </aside>
+
+</main>
+
+<!-- ส่วนท้าย -->
+<footer id="contact" class="center">
+    <p>ลิขสิทธิ์ © 2025 | ติดต่อ: info@example.com</p>
+</footer>
+
+=======
         <dt>CSS</dt>
         <dd>ภาษาสำหรับตกแต่งรูปแบบของเว็บเพจ</dd>
     </dl>
@@ -40,5 +149,18 @@
         <p><a href="mailto:info@example.com">ส่งเมล</a></p>
         <p><a href="tel:0812345678">โทร</a></p>
     </center>
+    <p align="center">
+        ลิงก์ภายใน
+        <br><img src="rmutl_logo.jpg "width="200" height="200" alt="rmutl_logo">
+    </p>
+      <p align="center">
+        ลิงก์ภายนอก
+        <br><img src="https://e-cms.rmutl.ac.th/assets/upload/files/2023/03/20230309104454_22208.png" width="200" height="200" alt="logo">
+          <p align="center">
+        ความสำคัญ Alr
+        <br><img src="rmutl_logo.jpg "width="200" height="200" alt="rmutl_logo">
+    </p>
+    </p>
+>>>>>>> Stashed changes
 </body>
 </html>
