@@ -1,0 +1,203 @@
+<!DOCTYPE html> <!-- ประกาศว่าเอกสารนี้ใช้มาตรฐาน HTML5 -->
+<html lang="th"> <!-- เริ่มเอกสาร HTML และกำหนดภาษาหลักเป็นภาษาไทย -->
+<head> <!-- ส่วนกำหนดข้อมูลของหน้าเว็บ -->
+    <meta charset="UTF-8"> <!-- รองรับภาษาไทยและอักขระสากล -->
+    <title>Student Portfolio</title> <!-- ชื่อเว็บ แสดงบนแท็บเบราว์เซอร์ -->
+
+    <style> /* เริ่มเขียน CSS ภายในไฟล์ HTML */
+
+        * { box-sizing: border-box; margin: 0; padding: 0; } /* รีเซ็ตค่ามาตรฐานของ browser */
+
+        body { /* กำหนดรูปแบบตัวหน้าเว็บทั้งหมด */
+            font-family: 'Segoe UI','Inter',Arial,sans-serif; /* ฟอนต์หลัก */
+            background: linear-gradient(180deg,#f4f7fb,#ffffff); /* พื้นหลังไล่สี */
+            color: #2c2c2c; /* สีตัวอักษร */
+            line-height: 1.7; /* ระยะห่างบรรทัดให้อ่านง่าย */
+        }
+
+        header { /* ส่วนหัวเว็บไซต์ */
+            background: linear-gradient(135deg,#0f2027,#203a43,#2c5364); /* พื้นหลัง header */
+            color: white; /* สีตัวอักษร */
+            text-align: center; /* จัดข้อความกึ่งกลาง */
+            padding: 70px 20px; /* ระยะขอบด้านใน */
+        }
+
+        header h1 { font-size: 40px; } /* ขนาดชื่อใหญ่ */
+        header p { margin-top: 12px; font-size: 18px; opacity: .9; } /* ข้อความรอง */
+
+        nav { /* แถบเมนู */
+            background: rgba(255,255,255,.9); /* พื้นหลังโปร่ง */
+            backdrop-filter: blur(10px); /* เอฟเฟกต์เบลอ */
+            display: flex; /* ใช้ Flexbox */
+            justify-content: center; /* จัดเมนูกึ่งกลาง */
+            gap: 35px; /* ระยะห่างเมนู */
+            padding: 16px; /* ระยะขอบ */
+            position: sticky; /* ติดด้านบนเมื่อเลื่อน */
+            top: 0; /* ตำแหน่งบนสุด */
+            z-index: 100; /* ลำดับการซ้อน */
+            box-shadow: 0 4px 12px rgba(0,0,0,.08); /* เงา */
+        }
+
+        nav a { /* ลิงก์เมนู */
+            color: #2c5364; /* สีลิงก์ */
+            text-decoration: none; /* ไม่ขีดเส้นใต้ */
+            font-weight: 600; /* ตัวหนา */
+            position: relative; /* ใช้กับเส้น hover */
+        }
+
+        nav a::after { /* เส้นใต้เมนู */
+            content:""; /* สร้าง element เปล่า */
+            position:absolute; /* ระบุตำแหน่ง */
+            width:0; /* เริ่มไม่มีเส้น */
+            height:2px; /* ความหนาเส้น */
+            left:0; /* ชิดซ้าย */
+            bottom:-4px; /* อยู่ใต้ตัวอักษร */
+            background:#2c5364; /* สีเส้น */
+            transition:.3s; /* ความลื่น */
+        }
+
+        nav a:hover::after { width:100%; } /* แสดงเส้นตอนเอาเมาส์ชี้ */
+
+        main { /* เนื้อหาหลัก */
+            max-width: 1000px; /* จำกัดความกว้าง */
+            margin: auto; /* จัดกลาง */
+            padding: 50px 20px; /* ระยะขอบ */
+        }
+
+        section { /* กล่องแต่ละส่วน */
+            background: white; /* พื้นหลัง */
+            padding: 35px; /* ขอบด้านใน */
+            margin-bottom: 40px; /* ระยะห่างด้านล่าง */
+            border-radius: 16px; /* มุมโค้ง */
+            box-shadow: 0 15px 40px rgba(0,0,0,.08); /* เงา */
+        }
+
+        h2 { /* หัวข้อย่อย */
+            font-size: 26px; /* ขนาดตัวอักษร */
+            color: #203a43; /* สี */
+            border-left: 6px solid #2c5364; /* เส้นซ้าย */
+            padding-left: 14px; /* ระยะจากเส้น */
+            margin-bottom: 20px; /* ระยะล่าง */
+        }
+
+        .about-container { /* ส่วน About */
+            display: flex; /* จัดแนวนอน */
+            align-items: flex-start; /* รูปชิดบน */
+            gap: 40px; /* ระยะห่าง */
+        }
+
+        .profile-pic { /* รูปโปรไฟล์ */
+            width: 250px; /* ความกว้าง */
+            height: 250px; /* ความสูง */
+            object-fit: cover; /* ครอบรูป */
+            border-radius: 14px; /* มุมโค้ง */
+            margin-left: auto; /* ดันไปชิดขวา */
+            box-shadow: 0 10px 30px rgba(0,0,0,.25); /* เงา */
+        }
+
+        ul { padding-left: 25px; } /* ระยะ list */
+        ul li { margin-bottom: 10px; } /* ระยะรายการ */
+
+        table { /* ตาราง */
+            width: 100%; /* เต็มพื้นที่ */
+            border-collapse: collapse; /* รวมขอบ */
+            margin-top: 25px; /* ระยะบน */
+            border-radius: 12px; /* มุมโค้ง */
+        }
+
+        th { /* หัวตาราง */
+            background: linear-gradient(135deg,#2c5364,#203a43); /* พื้นหลัง */
+            color: white; /* สีตัวอักษร */
+            padding: 14px; /* ระยะขอบ */
+        }
+
+        td { /* ช่องข้อมูล */
+            padding: 14px; /* ระยะ */
+            text-align: center; /* จัดกลาง */
+            border-bottom: 1px solid #eee; /* เส้นล่าง */
+        }
+
+        form label { /* ป้ายกำกับฟอร์ม */
+            font-weight: 600; /* ตัวหนา */
+            display: block; /* ขึ้นบรรทัดใหม่ */
+            margin-top: 15px; /* ระยะบน */
+        }
+
+        form input, form textarea { /* ช่องกรอก */
+            width: 100%; /* เต็มความกว้าง */
+            padding: 12px; /* ขอบ */
+            margin-top: 6px; /* ระยะบน */
+            border-radius: 10px; /* มุมโค้ง */
+            border: 1px solid #ccc; /* เส้นขอบ */
+        }
+
+        footer { /* ท้ายเว็บ */
+            background:#0f2027; /* พื้นหลัง */
+            color:white; /* สีข้อความ */
+            text-align:center; /* จัดกลาง */
+            padding:25px; /* ระยะ */
+            font-size:14px; /* ขนาด */
+        }
+
+    </style>
+</head>
+
+<body> <!-- ส่วนแสดงผล -->
+
+<header>
+    <h1>Santi Panyanoi</h1> <!-- ชื่อ -->
+    <p>Student Portfolio | Computer & Engineering</p> <!-- คำอธิบาย -->
+</header>
+
+<nav>
+    <a href="#about">About</a> <!-- ลิงก์ About -->
+    <a href="#skills">Skills</a> <!-- ลิงก์ Skills -->
+    <a href="#contact">Contact</a> <!-- ลิงก์ Contact -->
+</nav>
+
+<main>
+
+<section id="about">
+    <div class="about-container">
+        <div>
+            <h2>About me</h2>
+            <p>ชื่อ: นาย สันติปัญญาหน้อย</p>
+            <p>รหัสนักศึกษา: 68543210077-2</p>
+            <p>คณะ: วิศวกรรมศาสตร์</p>
+            <p>สาขา: วิศวกรรมซอฟต์แวร์</p>
+        </div>
+        <img src="santi.jpg" class="profile-pic"> <!-- รูปโปรไฟล์ -->
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Skills and Experience</h2>
+    <ul>
+        <li>C / C++ Programming</li>
+        <li>Python</li>
+        <li>HTML & CSS</li>
+        <li>PLC & Automation</li>
+    </ul>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <form>
+        <label>Username</label>
+        <input type="text">
+        <label>Email</label>
+        <input type="email">
+        <label>Message</label>
+        <textarea></textarea>
+        <input type="submit" value="Submit">
+    </form>
+</section>
+
+</main>
+
+<footer>
+    © 2025 Santi Panyanoi <!-- ลิขสิทธิ์ -->
+</footer>
+
+</body>
+</html>
