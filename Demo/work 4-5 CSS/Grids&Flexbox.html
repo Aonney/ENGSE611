@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grids&Flexbox</title>
+    <style>
+        /* --- Grid Container (โครงสร้างหลักของ Navbar) --- */
+        .menu-container {
+            display: grid; /* เปิดโหมด Grid */
+            /* แบ่งเป็น 2 คอลัมน์: โลโก้คงที่ 200px และเมนูยืดตามพื้นที่ที่เหลือ (1fr) */
+            grid-template-columns: 200px 1fr; 
+            grid-template-rows: 50px; /* สูง 50px */
+            align-items: center; /* จัดเนื้อหาให้อยู่กึ่งกลางแนวตั้ง */
+            background-color: #222; /* สีพื้นหลังดำ */
+            color: white; /* สีตัวอักษรขาว */
+            padding: 10px 20px;
+        }
+
+        /* --- Logo --- */
+        .logo {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* --- Menu ใช้ Flexbox เพื่อเรียงเมนูแนวนอน --- */
+        ul {
+            display: flex; /* ใช้ Flexbox จัดเมนูเรียงกัน */
+            list-style: none; /* เอาจุดหน้าลิสต์ออก */
+            align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+            gap: 20px; /* ระยะห่างระหว่างเมนูแต่ละตัว */
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li a {
+            color: white;
+            text-decoration: none; /* เอาเส้นใต้ปกติออก */
+            font-size: 18px;
+        }
+
+        /* เอฟเฟกต์เมื่อเอาเมาส์ไปชี้ */
+        ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        <div class="logo">MyLogo</div>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
