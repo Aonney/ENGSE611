@@ -1,0 +1,39 @@
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 40px;
+        }
+
+        /* กล่องรวมการ์ด */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        /* การ์ดแต่ละใบ */
+        .card {
+            background-color: #ffffff;
+            width: 250px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover effect */
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 14px;
+        }
