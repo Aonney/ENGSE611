@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Switch</title>
+
+    <style>
+        body {
+            font-family: "Prompt", sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        #outputBox {
+            padding: 15px;
+            border-radius: 10px;
+            background: #111;
+            border-left: 4px solid #00d26a;
+            color: #dcdcdc;
+            margin-bottom: 20px;
+            font-family: Consolas, monospace;
+            white-space: pre-line;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            background: #00bfff;
+            border: none;
+            color: white;
+        }
+
+        button:hover {
+            background: #0095d6;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>โปรแกรมตัดเกรด (Switch Statement)</h2>
+
+<div id="outputBox">ผลลัพธ์จะปรากฏที่นี่...</div>
+
+<button onclick="runDemo()">สุ่มคะแนน</button>
+
+<script>
+
+function runDemo() {
+
+    //สุ่มคะแนน 0–100
+    let score = Math.floor(Math.random() * 101);
+
+    let grade = "";
+    let result = "";
+    let description = "";
+
+    //ตัดเกรดด้วย if / else
+    if (score >= 80) {
+        grade = "A";
+    } else if (score >= 70) {
+        grade = "B";
+    } else if (score >= 60) {
+        grade = "C";
+    } else if (score >= 50) {
+        grade = "D";
+    } else {
+        grade = "F";
+    }
+
+    //ผ่าน / ไม่ผ่าน
+    if (score >= 50) {
+        result = "ผ่าน";
+    } else {
+        result = "ไม่ผ่าน";
+    }
+
+    //ใช้ switch แสดงคำอธิบาย
+    switch (grade) {
+        case "A":
+            description = "ยอดเยี่ยมมาก";
+            break;
+        case "B":
+            description = "ดีมาก รักษามาตรฐานไว้";
+            break;
+        case "C":
+            description = "ผ่านเกณฑ์ระดับดี";
+            break;
+        case "D":
+            description = "พอใช้ แต่ควรพัฒนาเพิ่ม";
+            break;
+        case "F":
+            description = "ต้องลงทะเบียนเรียนใหม่";
+            break;
+        default:
+            description = "ไม่พบข้อมูลเกรด";
+    }
+
+    //รวมข้อความ
+    let message =
+        "คะแนนที่สุ่มได้: " + score + "\n" +
+        "เกรด: " + grade + "\n" +
+        "ผลสอบ: " + result + "\n" +
+        "คำอธิบาย: " + description;
+
+    // แสดงผลหน้าเว็บ
+    document.getElementById("outputBox").innerText = message;
+
+    // แสดงผลใน Console
+    console.log(message);
+}
+
+</script>
+
+</body>
+</html>
